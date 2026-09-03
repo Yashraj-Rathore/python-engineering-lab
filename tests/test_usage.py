@@ -1,5 +1,5 @@
-from src.usage import summarize_usage
 import pytest
+from src.usage import summarize_usage
 
 def test_summarize_usage_normal_records():
     records = [
@@ -38,5 +38,5 @@ def test_summazrize_usage_missing_tokens():
         {"project_id": "p1"}
     ]
 
-    with pytest.raises(KeyError):
+    with pytest.raises(KeyError, match="tokens"):
         summarize_usage(records)
